@@ -40,7 +40,7 @@ export default function Start ({navigation}) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'powderblue' }}>
       <FadeInView
-        style={{ width: 250, height: 50, backgroundColor: 'white', borderRadius: 90, alignItems: 'center', justifyContent: 'center' }}>
+        style={{ width: 0, height: 0, backgroundColor: 'white', borderRadius: 90, alignItems: 'center', justifyContent: 'center' }}>
         <Image source={require('../images/imgStart/appIcon.png')}
           style={{ height: '80%', width: '80%' }}
           resizeMode='stretch'
