@@ -21,9 +21,9 @@ export default function Home({ navigation }) {
     return (
         <View style={{ flex: 1}} >
             {isShow ?
-                <TouchableOpacity  style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-end', backgroundColor: '#ccc' }} onPress={() => setShow(!isShow)}>
+                <View  style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-end', backgroundColor: '#ccc' }} onStartShouldSetResponder={() => setShow(!isShow)}>
                     <ShowChose />
-                </TouchableOpacity >
+                </View >
                 :
                 <View style={{ flex: 1, justifyContent: 'space-between', alignItems: 'center' }}>
                     <View style={{ width: '100%', height: '12%', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start' }}>
