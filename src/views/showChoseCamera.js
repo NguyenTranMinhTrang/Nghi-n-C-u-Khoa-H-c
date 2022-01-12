@@ -2,6 +2,8 @@ import React, { useRef, useEffect, useState } from 'react';
 import { Animated, Text, View, TouchableOpacity, Image } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import * as Permissions from 'expo-permissions';
+import takePhoto from '../components/camera';
+import pickImage from '../components/useImageFromLibrary';
 
 const Show = (props) => {
   const transition = useRef(new Animated.Value(200)).current;
@@ -24,55 +26,9 @@ const Show = (props) => {
   );
 };
 
-export default function ShowChose() {
+export default function ShowChoose() {
   const [image, setImage] = useState(null);
-  const AskForPermission = async () => {
-    const result = await Permissions.askAsync(Permissions.CAMERA);
-    if (result.status !== 'granted') {
-      alert('no permissions to access camera!', [{ text: 'ok' }]);
-      return false;
-    }
 
-    return true;
-  }
-
-  takePhoto = async () => {
-    const hasPermission = await AskForPermission();
-    if (!hasPermission) {
-      return;
-    }
-    else {
-      let img = await ImagePicker.launchCameraAsync({
-        mediaTypes: ImagePicker.MediaTypeOptions.Images,
-        allowsEditing: false,
-        aspect: [3, 3],
-        quality: 1,
-        base64: true,
-      })
-
-      console.log(img.uri);
-
-      if (!img.cancelled) {
-        setImage(img.uri);
-      }
-    }
-  }
-
-  const pickImage = async () => {
-        let result = await ImagePicker.launchImageLibraryAsync({
-            mediaTypes: ImagePicker.MediaTypeOptions.All,
-            allowsEditing: true,
-            aspect: [4, 3],
-            quality: 1,
-        });
-
-        console.log(result);
-
-        if (!result.cancelled) {
-            setImage(result.uri);
-        }
-    };
-  
   return (
     <Show
       style={{
@@ -91,7 +47,7 @@ export default function ShowChose() {
           alignItems: 'center',
           justifyContent: 'center',
         }}
-        onPress={takePhoto}  
+        onPress={() => takePhoto(result => setImage(result))}
       >
         <Text style={{ fontSize: 20 }}>Use Camera</Text>
       </TouchableOpacity>
@@ -105,7 +61,7 @@ export default function ShowChose() {
           alignItems: 'center',
           justifyContent: 'center',
         }}
-        onPress={pickImage}
+        onPress={() => pickImage(result => setImage(result))}
         >
         <Text style={{ fontSize: 20 }}>Upload Image From Librari</Text>
       </TouchableOpacity>

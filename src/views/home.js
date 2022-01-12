@@ -14,7 +14,7 @@ import {
 import React, { Component, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import ShowChose from './showChoseCamera';
+import ShowChoose from './showChoseCamera';
 
 export default function Home({ navigation }) {
     const [isShow, setShow] = useState(false);
@@ -22,7 +22,7 @@ export default function Home({ navigation }) {
         <View style={{ flex: 1}} >
             {isShow ?
                 <View  style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-end', backgroundColor: '#ccc' }} onStartShouldSetResponder={() => setShow(!isShow)}>
-                    <ShowChose />
+                    <ShowChoose />
                 </View >
                 :
                 <View style={{ flex: 1, justifyContent: 'space-between', alignItems: 'center' }}>
