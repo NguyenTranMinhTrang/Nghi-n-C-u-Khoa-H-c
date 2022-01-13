@@ -9,10 +9,10 @@ import Start from "./start";
 const Stack = createNativeStackNavigator();
 
 export default function RootComponent() {
-    
+
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="Start" screenOptions={{headerShown: false}}>
+            <Stack.Navigator initialRouteName="Start" screenOptions={{ headerShown: false }}>
                 <Stack.Screen name="Start" component={Start} />
                 <Stack.Screen name="Login" component={Login} />
                 <Stack.Screen name="Home" component={Home} />
