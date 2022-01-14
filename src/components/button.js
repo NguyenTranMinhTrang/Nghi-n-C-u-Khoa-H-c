@@ -7,7 +7,7 @@ import {
 
 export default function Button({ style, children, ...otherProps }) {
     return (
-        <TouchableOpacity style={[styles.button , style]} onPress={otherProps.onPress}>
+        <TouchableOpacity style={[styles.button , style]} {...otherProps}>
             {children}
         </TouchableOpacity>
     )

@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import * as ImagePicker from 'expo-image-picker';
-import * as Permissions from 'expo-permissions';
 
 const AskForPermission = async () => {
-    const result = await Permissions.askAsync(Permissions.CAMERA);
-    if (result.status !== 'granted') {
+    const result = await ImagePicker.requestCameraPermissionsAsync();
+    if (result.granted === false) {
         alert('no permissions to access camera!', [{ text: 'ok' }]);
         return false;
     }

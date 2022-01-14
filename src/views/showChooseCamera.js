@@ -28,6 +28,7 @@ const Show = (props) => {
 
 export default function ShowChoose() {
   const [image, setImage] = useState(null);
+  
 
   return (
     <Show
@@ -63,7 +64,7 @@ export default function ShowChoose() {
         }}
         onPress={() => pickImage(result => setImage(result))}
         >
-        <Text style={{ fontSize: 20 }}>Upload Image From Librari</Text>
+        <Text style={{ fontSize: 20 }}>Upload Image From Library</Text>
       </TouchableOpacity>
     </Show>
   );

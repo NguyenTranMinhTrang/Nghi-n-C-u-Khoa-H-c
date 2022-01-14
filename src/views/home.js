@@ -14,7 +14,7 @@ import {
 import React, { Component, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import ShowChoose from './showChoseCamera';
+import ShowChoose from './showChooseCamera';
 
 export default function Home({ navigation }) {
     const [isShow, setShow] = useState(false);
