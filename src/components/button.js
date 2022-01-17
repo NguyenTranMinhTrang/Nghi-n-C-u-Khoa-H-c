@@ -16,7 +16,7 @@ export default function Button({ style, children, ...otherProps }) {
 const styles = StyleSheet.create({
     button: {
         width: '100%',
-        height: '25%',
+        height: '100%',
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',

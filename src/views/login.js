@@ -12,6 +12,8 @@ import {
 import React, { Component, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons'; 
 import Button from '../components/button';
 
 const windowHeight = Dimensions.get('window').height;
@@ -24,40 +26,38 @@ export default function Login({ navigation }) {
                 <Text style={styles.header}>Welcome to our app!</Text>
                 <View style={styles.container}>
                     <KeyboardAvoidingView enabled style={{ height: '50%', width: '85%', marginTop: 60 }}>
-                        <View style={{ height: '100%', width: '100%'}}>
+                        <View style={{ height: '100%', width: '100%' }}>
                             {/* Username Input */}
                             <Text style={styles.title}>Email</Text>
                             <View style={[styles.input, styles.spacer10]}>
-                                <Image source={require('../images/imgLogin/user.png')} style={{ marginRight: 10 }} resizeMode='stretch' />
+                                <FontAwesome name="user" size={30} color="black" style={{marginRight: 10}} />
                                 <TextInput style={styles.text} />
                             </View>
 
                             {/* Password */}
                             <Text style={styles.title}>Password</Text>
                             <View style={[styles.input, styles.spacer20]}>
-                                <Image source={require('../images/imgLogin/key.png')} style={{ marginRight: 10 }} resizeMode='stretch' />
+                                <FontAwesome name="lock" size={30} color="black" style={{marginRight: 10}}/>
                                 <TextInput style={[styles.text, styles.inputPassword]} secureTextEntry={visable && true} />
                                 <TouchableOpacity
-                                    style={{ height: '100%', width: 50, position: 'absolute', right: 0 }}
+                                    style={{ height: '100%', width: 50, position: 'absolute', right: 0, alignItems: 'center', justifyContent: 'center' }}
                                     onPress={() => {
                                         setVisable(!visable);
                                     }}
                                 >
-                                    {visable === false ? <Image source={require('../images/imgLogin/eyeClose.png')}
-                                        style={{ height: '100%', width: '100%' }}
-                                        resizeMode='stretch'
-                                    /> :
-                                        <Image source={require('../images/imgLogin/eye.png')}
-                                            style={{ height: '100%', width: '100%' }}
-                                            resizeMode='stretch'
-                                        />}
+                                    {visable === false ? <Ionicons name="md-eye" size={40} color="black" />    
+                                        : <Ionicons name="md-eye-off" size={40} color="black" />
+                                    }
                                 </TouchableOpacity>
                             </View>
 
                             {/* Button Login */}
-                            <Button style={styles.button} onPress={() => navigation.navigate('Home')}>
-                                <Text style={styles.buttonText}>Login</Text>
-                            </Button>
+                            <View style={styles.button}>
+                                <Button onPress={() => navigation.navigate('Home')}>
+                                    <Text style={styles.buttonText}>Login</Text>
+                                </Button>
+                            </View>
+
                         </View>
                     </KeyboardAvoidingView>
 
@@ -123,6 +123,8 @@ const styles = StyleSheet.create({
     },
 
     button: {
+        width: '100%',
+        height: '25%',
         backgroundColor: '#FF82AC',
         marginTop: 40
     },
