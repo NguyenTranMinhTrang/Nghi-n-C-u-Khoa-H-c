@@ -18,7 +18,7 @@ const windowHeight = Dimensions.get('window').height;
 export default function Login({ navigation }) {
     const [visable, setVisable] = useState(true);
     return (
-        <View style={{ width: '100%', height: '100%', backgroundColor: '#FF82AC' }} >
+        <View style={{ width: '100%', height: '100%', backgroundColor: 'black' }} >
             <SafeAreaView style={{ flex: 1, alignItems: 'center' }}>
                 <Text style={styles.header}>Welcome to our app!</Text>
                 <View style={styles.container}>
@@ -34,7 +34,7 @@ export default function Login({ navigation }) {
                             {/* Password */}
                             <Text style={styles.title}>Password</Text>
                             <View style={[styles.input, styles.spacer20]}>
-                                <FontAwesome name="lock" size={30} color="black" style={{marginRight: 10}}/>
+                                <FontAwesome name="lock" size={33} color="black" style={{marginRight: 10}}/>
                                 <TextInput style={[styles.text, styles.inputPassword]} secureTextEntry={visable && true} />
                                 <TouchableOpacity
                                     style={{ height: '100%', width: 50, position: 'absolute', right: 0, alignItems: 'center', justifyContent: 'center' }}
@@ -50,7 +50,7 @@ export default function Login({ navigation }) {
 
                             {/* Button Login */}
                             <View style={styles.button}>
-                                <Button onPress={() => navigation.navigate('Home')}>
+                                <Button onPress={() => navigation.navigate('Menu')}>
                                     <Text style={styles.buttonText}>Login</Text>
                                 </Button>
                             </View>
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     button: {
         width: '100%',
         height: '25%',
-        backgroundColor: '#FF82AC',
+        backgroundColor: 'black',
         marginTop: 40
     },
 

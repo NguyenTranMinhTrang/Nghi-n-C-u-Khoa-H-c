@@ -21,7 +21,7 @@ export default function Home({ navigation }) {
                     <View style={{ width: '100%', height: '12%', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start' }}>                   
                         <AntDesign name="left" size={30} color="white" style={{paddingRight: 10}} onPress={() => navigation.goBack()} />
                         <Text style={{ fontSize: 26, fontWeight: '300' , color: 'white'}}>Back</Text>
-                        <Ionicons name="menu" size={40} color="white" style={{position: 'absolute', right:0, paddingRight: 5, paddingTop: 2}} />
+                        <Ionicons name="menu" size={40} color="white" style={{position: 'absolute', right:0, paddingRight: 5, paddingTop: 2}} onPress={() => navigation.openDrawer()} />
                     </View>
                     <Text style={{fontSize: 20, color: 'white', marginTop: '100%', textAlign: 'center'}}>Take a picture to recognize your animal!</Text>
                     <View style={{ width: '20%', height: '11%', marginBottom: '15%', borderWidth: 1, borderRadius: 90, borderColor: 'white', justifyContent: 'center', alignItems: 'center'}}>
