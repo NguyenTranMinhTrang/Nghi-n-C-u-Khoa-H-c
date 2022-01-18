@@ -1,21 +1,10 @@
 import {
-    StyleSheet,
     Text,
     View,
-    ScrollView,
-    TextInput,
-    SafeAreaView,
     ImageBackground,
-    Dimensions,
-    Image,
-    TouchableOpacity,
-    TouchableHighlight 
 } from 'react-native';
-import React, { Component, useState } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React, {useState } from 'react';
 import ShowChoose from './showChooseCamera';
-import Button from '../components/button';
 import { AntDesign } from '@expo/vector-icons'; 
 import { Ionicons } from '@expo/vector-icons'; 
 
@@ -30,8 +19,9 @@ export default function Home({ navigation }) {
                 :
                 <View style={{ flex: 1, justifyContent: 'space-between', alignItems: 'center' }}>
                     <View style={{ width: '100%', height: '12%', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start' }}>                   
-                        <AntDesign name="left" size={30} color="white" onPress={() => navigation.goBack()} />
+                        <AntDesign name="left" size={30} color="white" style={{paddingRight: 10}} onPress={() => navigation.goBack()} />
                         <Text style={{ fontSize: 26, fontWeight: '300' , color: 'white'}}>Back</Text>
+                        <Ionicons name="menu" size={40} color="white" style={{position: 'absolute', right:0, paddingRight: 5, paddingTop: 2}} />
                     </View>
                     <Text style={{fontSize: 20, color: 'white', marginTop: '100%', textAlign: 'center'}}>Take a picture to recognize your animal!</Text>
                     <View style={{ width: '20%', height: '11%', marginBottom: '15%', borderWidth: 1, borderRadius: 90, borderColor: 'white', justifyContent: 'center', alignItems: 'center'}}>
@@ -40,8 +30,6 @@ export default function Home({ navigation }) {
                 </View>
 
             }
-
-
         </ImageBackground>
     )
 }

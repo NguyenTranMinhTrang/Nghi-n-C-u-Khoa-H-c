@@ -5,13 +5,10 @@ import {
     TextInput,
     SafeAreaView,
     Dimensions,
-    Image,
     TouchableOpacity,
     KeyboardAvoidingView
 } from 'react-native';
-import React, { Component, useState } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React, {useState } from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons'; 
 import Button from '../components/button';
