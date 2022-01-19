@@ -4,83 +4,82 @@ import {
     View,
     TextInput,
     SafeAreaView,
-    Dimensions,
     TouchableOpacity,
-    KeyboardAvoidingView
+    KeyboardAvoidingView,
+    Image
 } from 'react-native';
-import React, {useState } from 'react';
+import React, { useState } from 'react';
 import { Ionicons } from '@expo/vector-icons';
-import { FontAwesome } from '@expo/vector-icons'; 
+import { FontAwesome } from '@expo/vector-icons';
 import Button from '../components/button';
-
-const windowHeight = Dimensions.get('window').height;
 
 export default function Login({ navigation }) {
     const [visable, setVisable] = useState(true);
     return (
-        <View style={{ width: '100%', height: '100%', backgroundColor: 'black' }} >
-            <SafeAreaView style={{ flex: 1, alignItems: 'center' }}>
-                <Text style={styles.header}>Welcome to our app!</Text>
-                <View style={styles.container}>
-                    <KeyboardAvoidingView enabled style={{ height: '50%', width: '85%', marginTop: 60 }}>
-                        <View style={{ height: '100%', width: '100%' }}>
-                            {/* Username Input */}
-                            <Text style={styles.title}>Email</Text>
-                            <View style={[styles.input, styles.spacer10]}>
-                                <FontAwesome name="user" size={30} color="black" style={{marginRight: 10}} />
-                                <TextInput style={styles.text} />
-                            </View>
+        <SafeAreaView style={{ flex: 1, backgroundColor: 'black' }}>
+            <View style={{ height: '40%', width: '100%' }}>
+                <Image
+                    style={{ height: '100%', width: '100%' }}
+                    source={require('../images/imgLogin/backgroundLogin.png')}
+                    resizeMode='cover'
+                />
+            </View>
 
-                            {/* Password */}
-                            <Text style={styles.title}>Password</Text>
-                            <View style={[styles.input, styles.spacer20]}>
-                                <FontAwesome name="lock" size={33} color="black" style={{marginRight: 10}}/>
-                                <TextInput style={[styles.text, styles.inputPassword]} secureTextEntry={visable && true} />
-                                <TouchableOpacity
-                                    style={{ height: '100%', width: 50, position: 'absolute', right: 0, alignItems: 'center', justifyContent: 'center' }}
-                                    onPress={() => {
-                                        setVisable(!visable);
-                                    }}
-                                >
-                                    {visable === false ? <Ionicons name="md-eye" size={40} color="black" />    
-                                        : <Ionicons name="md-eye-off" size={40} color="black" />
-                                    }
-                                </TouchableOpacity>
-                            </View>
-
-                            {/* Button Login */}
-                            <View style={styles.button}>
-                                <Button onPress={() => navigation.navigate('Menu')}>
-                                    <Text style={styles.buttonText}>Login</Text>
-                                </Button>
-                            </View>
-
+            <View style={styles.container}>
+                <KeyboardAvoidingView enabled style={{ height: '50%', width: '85%', marginTop: 20 }}>
+                    <View style={{ height: '100%', width: '100%' }}>
+                        {/* Username Input */}
+                        <Text style={styles.title}>Email</Text>
+                        <View style={[styles.input, styles.spacer10]}>
+                            <FontAwesome name="user" size={30} color="black" style={{ marginRight: 10 }} />
+                            <TextInput style={styles.text} />
                         </View>
-                    </KeyboardAvoidingView>
 
+                        {/* Password */}
+                        <Text style={styles.title}>Password</Text>
+                        <View style={[styles.input, styles.spacer20]}>
+                            <FontAwesome name="lock" size={33} color="black" style={{ marginRight: 10 }} />
+                            <TextInput style={[styles.text, styles.inputPassword]} secureTextEntry={visable && true} />
+                            <TouchableOpacity
+                                style={{ height: '100%', width: 50, position: 'absolute', right: 0, alignItems: 'center', justifyContent: 'center' }}
+                                onPress={() => {
+                                    setVisable(!visable);
+                                }}
+                            >
+                                {visable === false ? <Ionicons name="md-eye" size={40} color="black" />
+                                    : <Ionicons name="md-eye-off" size={40} color="black" />
+                                }
+                            </TouchableOpacity>
+                        </View>
 
-                    {/* Sign in */}
-                    <View style={{ marginTop: '25%', fontSize: 15, flexDirection: 'row' }}>
-                        <Text style={{ fontWeight: '300' }}>DON'T HAVE ANY ACCOUNT ? </Text>
-                        <TouchableOpacity>
-                            <Text style={{ fontWeight: '500' }}> SIGN UP</Text>
-                        </TouchableOpacity>
+                        {/* Button Login */}
+                        <View style={styles.button}>
+                            <Button onPress={() => navigation.navigate('Menu')}>
+                                <Text style={styles.buttonText}>Login</Text>
+                            </Button>
+                        </View>
+
                     </View>
+                </KeyboardAvoidingView>
+
+
+                {/* Sign in */}
+                <View style={{ marginTop: '25%', fontSize: 15, flexDirection: 'row' }}>
+                    <Text style={{ fontWeight: '300' }}>DON'T HAVE ANY ACCOUNT ? </Text>
+                    <TouchableOpacity>
+                        <Text style={{ fontWeight: '500' }}> SIGN UP</Text>
+                    </TouchableOpacity>
                 </View>
+            </View>
 
-
-
-            </SafeAreaView>
-        </View>
+        </SafeAreaView>
     )
 }
-
 const styles = StyleSheet.create({
     container: {
-        height: '80%',
+        height: '60%',
         width: '100%',
         backgroundColor: 'white',
-        marginTop: 0.2 * windowHeight,
         alignItems: 'center',
         borderTopLeftRadius: 25,
         borderTopRightRadius: 25
@@ -97,8 +96,8 @@ const styles = StyleSheet.create({
     },
 
     title: {
-        fontSize: 20,
-        fontWeight: '300'
+        fontSize: 18,
+        fontWeight: '400'
     },
 
     text: {
@@ -121,7 +120,7 @@ const styles = StyleSheet.create({
 
     button: {
         width: '100%',
-        height: '25%',
+        height: '28%',
         backgroundColor: 'black',
         marginTop: 40
     },
@@ -132,13 +131,5 @@ const styles = StyleSheet.create({
         fontWeight: '300',
     },
 
-    header: {
-        position: 'absolute',
-        top: 100,
-        left: 30,
-        fontSize: 27,
-        color: 'white',
-        fontWeight: '300'
-    }
 
 })

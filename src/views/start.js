@@ -5,19 +5,19 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 
-export default function Start ({navigation}) {
+export default function Start({ navigation }) {
   const FadeInView = (props) => {
     const fadeAnim = useRef(new Animated.Value(0)).current; // Initial value for opacity: 0
-  
+
     React.useEffect(() => {
       Animated.timing(fadeAnim, {
         toValue: 1,
         duration: 2000,
         easing: Easing.bounce,
-        useNativeDriver : false,
-      }).start( (finished) => { if (finished.finished) navigation.navigate('Login')});
+        useNativeDriver: false,
+      }).start((finished) => { if (finished.finished) navigation.navigate('Login') });
     }, [fadeAnim]);
-  
+
     return (
       <Animated.View // Special animatable View
         style={{
@@ -25,20 +25,20 @@ export default function Start ({navigation}) {
           opacity: fadeAnim,
           height: fadeAnim.interpolate({
             inputRange: [0, 1],
-            outputRange: [0, 150]
+            outputRange: [0, 200]
           }),
           width: fadeAnim.interpolate({
             inputRange: [0, 1],
-            outputRange: [0, 150]
+            outputRange: [0, 200]
           }),
         }}>
         {props.children}
       </Animated.View>
     );
-  };  
+  };
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'powderblue' }}>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'white' }}>
       <FadeInView
         style={{ width: 0, height: 0, backgroundColor: 'white', borderRadius: 90, alignItems: 'center', justifyContent: 'center' }}>
         <Image source={require('../images/imgStart/appIcon.png')}
