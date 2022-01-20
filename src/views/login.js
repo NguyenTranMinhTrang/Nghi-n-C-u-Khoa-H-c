@@ -26,7 +26,7 @@ export default function Login({ navigation }) {
             </View>
 
             <View style={styles.container}>
-                <KeyboardAvoidingView enabled style={{ height: '50%', width: '85%', marginTop: 20 }}>
+                <KeyboardAvoidingView enabled style={{ height: '60%', width: '85%', marginTop: 20 }}>
                     <View style={{ height: '100%', width: '100%' }}>
                         {/* Username Input */}
                         <Text style={styles.title}>Email</Text>
@@ -64,7 +64,7 @@ export default function Login({ navigation }) {
 
 
                 {/* Sign in */}
-                <View style={{ marginTop: '25%', fontSize: 15, flexDirection: 'row' }}>
+                <View style={{ marginTop: '20%', fontSize: 15, flexDirection: 'row' }}>
                     <Text style={{ fontWeight: '300' }}>DON'T HAVE ANY ACCOUNT ? </Text>
                     <TouchableOpacity>
                         <Text style={{ fontWeight: '500' }}> SIGN UP</Text>
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     input: {
         backgroundColor: 'white',
         borderBottomWidth: 2,
-        height: '20%',
+        height: '18%',
         width: '100%',
         alignItems: 'center',
         borderEndColor: 'black',
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     },
 
     title: {
-        fontSize: 18,
+        fontSize: 19,
         fontWeight: '400'
     },
 
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
 
     button: {
         width: '100%',
-        height: '28%',
+        height: '20%',
         backgroundColor: 'black',
         marginTop: 40
     },

@@ -13,8 +13,8 @@ const Drawer = createDrawerNavigator();
 
 export default function Menu() {
   return (
-    <Drawer.Navigator initialRouteName='Home' screenOptions={{headerShown: false, drawerPosition: 'right',}}>
-      <Drawer.Screen name='Home' component={Home}/>
+    <Drawer.Navigator initialRouteName='Home' screenOptions={{ headerShown: false, drawerPosition: 'right', }}>
+      <Drawer.Screen name='Home' component={Home} />
     </Drawer.Navigator>
   )
 }

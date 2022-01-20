@@ -6,7 +6,6 @@ import { createDrawerNavigator, DrawerItemList, DrawerItem } from '@react-naviga
 import Login from "./login";
 import Start from "./start";
 import Menu from "./menu";
-
 const Stack = createNativeStackNavigator();
 
 export default function RootComponent() {
