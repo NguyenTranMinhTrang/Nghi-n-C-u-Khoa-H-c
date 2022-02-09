@@ -17,7 +17,7 @@ export default function RootComponent() {
                 <Stack.Screen name="Start" component={Start} />
                 <Stack.Screen name="Login" component={Login} />
                 <Stack.Screen name="Menu" component={Menu} />
-                <Stack.Screen name="Test" component={Test} />
+                {/* <Stack.Screen name="Test" component={Test} /> */}
             </Stack.Navigator>
         </NavigationContainer>
     )

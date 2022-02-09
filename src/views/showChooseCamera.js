@@ -1,9 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Animated, Text, View, TouchableOpacity, Image } from 'react-native';
-import * as ImagePicker from 'expo-image-picker';
-import * as Permissions from 'expo-permissions';
 import takePhoto from '../components/camera';
 import pickImage from '../components/useImageFromLibrary';
+import imageAPI from '../api/imageAPI';
 
 const Show = (props) => {
   const transition = useRef(new Animated.Value(200)).current;
@@ -27,8 +26,7 @@ const Show = (props) => {
 };
 
 export default function ShowChoose() {
-  const [image, setImage] = useState(null);
-  
+  //const [image, setImage] = useState(null);
 
   return (
     <Show
@@ -48,7 +46,7 @@ export default function ShowChoose() {
           alignItems: 'center',
           justifyContent: 'center',
         }}
-        onPress={() => takePhoto(result => setImage(result))}
+        onPress={() => takePhoto(imageAPI.upLoad)}
       >
         <Text style={{ fontSize: 20 }}>Use Camera</Text>
       </TouchableOpacity>
@@ -62,8 +60,8 @@ export default function ShowChoose() {
           alignItems: 'center',
           justifyContent: 'center',
         }}
-        onPress={() => pickImage(result => setImage(result))}
-        >
+        onPress={() => pickImage(imageAPI.upLoad)}
+      >
         <Text style={{ fontSize: 20 }}>Upload Image From Library</Text>
       </TouchableOpacity>
     </Show>

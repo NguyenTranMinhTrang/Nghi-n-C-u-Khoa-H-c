@@ -11,7 +11,7 @@ export default function Test() {
         const getData = async () => {
             try {
                 const res = await imageAPI.getAll();
-                console.log(res.data);
+                console.log(res);
             } catch (error) {
                 console.log(error);
             }
