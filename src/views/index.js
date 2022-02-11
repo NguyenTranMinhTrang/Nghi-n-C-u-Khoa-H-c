@@ -13,7 +13,7 @@ export default function RootComponent() {
 
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="Test" screenOptions={{ headerShown: false }}>
+            <Stack.Navigator initialRouteName="Login1" screenOptions={{ headerShown: false }}>
                 <Stack.Screen name="Start" component={Start} />
                 <Stack.Screen name="Login" component={Login} />
                 <Stack.Screen name="Menu" component={Menu} />

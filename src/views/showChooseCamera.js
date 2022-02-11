@@ -25,6 +25,7 @@ const Show = (props) => {
   );
 };
 
+
 export default function ShowChoose() {
   //const [image, setImage] = useState(null);
 

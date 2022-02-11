@@ -13,6 +13,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import Button from '../components/button';
 
+const windowHeight = Dimensions.get('window').height;
+
 export default function Login({ navigation }) {
     const [visable, setVisable] = useState(true);
     return (
@@ -131,5 +133,9 @@ const styles = StyleSheet.create({
         fontWeight: '300',
     },
 
-
+    buttonRegister: {
+        height: '10%',
+        width: '85%',
+        marginTop: 0.15 * windowHeight,
+    }
 })
