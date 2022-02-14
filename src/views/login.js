@@ -6,7 +6,8 @@ import {
     SafeAreaView,
     TouchableOpacity,
     KeyboardAvoidingView,
-    Image
+    Image,
+    Dimensions
 } from 'react-native';
 import React, { useState } from 'react';
 import { Ionicons } from '@expo/vector-icons';
@@ -56,7 +57,7 @@ export default function Login({ navigation }) {
 
                         {/* Button Login */}
                         <View style={styles.button}>
-                            <Button onPress={() => navigation.navigate('Menu')}>
+                            <Button onPress={() => navigation.navigate('Drawer')}>
                                 <Text style={styles.buttonText}>Login</Text>
                             </Button>
                         </View>

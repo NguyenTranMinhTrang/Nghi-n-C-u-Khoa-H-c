@@ -27,16 +27,17 @@ const Show = (props) => {
 
 
 export default function ShowChoose() {
-  //const [image, setImage] = useState(null);
-
   return (
     <Show
       style={{
+        position: 'absolute',
+        bottom: 0,
         width: '100%',
         height: 200,
         backgroundColor: 'white',
         justifyContent: 'flex-end',
-        borderRadius: 15,
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30,
       }}>
       <TouchableOpacity
         style={{
